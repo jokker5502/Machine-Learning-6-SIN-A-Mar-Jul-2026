@@ -1,7 +1,7 @@
 {
     "name" : "Ml Workshop 2 - Work Enviroment",
     "build":{
-    "dockerfile": "Dockerfikle"
+    "dockerfile": "Dockerfile"
     },
 
     "customizations": {

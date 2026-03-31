@@ -1,6 +1,6 @@
-FROM python:3:12-slim
-RUN apt-get update && apt-get installer -y \
-    crul \
+FROM python:3.12-slim
+RUN apt-get update && apt-get install -y \
+    curl \
     git \
     git-lfs \
     && rm -rf /var/lib/apt/lists/*
