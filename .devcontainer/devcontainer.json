@@ -15,10 +15,10 @@
                 "ms-azuretools.vscode-containers"
             ],
             "settings":{
-                "python.defaultInterpreterPath": "/app/.venv/bin/python",
+                "python.defaultInterpreterPath": "/app/.mateoenv/bin/python",
                 "jupyter.notebookFileRoot": "${workspaceFolder}"
             }
         }
     },
-    "postCreateCommand": "echo 'source /app/.venv/bin/activate' >> ~/.bashrc"
+    "postCreateCommand": "echo 'source /app/.mateoenv/bin/activate' >> ~/.bashrc"
 }
