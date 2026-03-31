@@ -1,0 +1,42 @@
+{
+  // To distinguish this Codespace from others
+  "name": "ML Workshop 2 - Work Enviroment",
+  // It tells Codespaces what to use to build the container
+  // Alternative: reference a pre-built image directly with "image": "python:3.12-slim"
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  // This section tells Codespaces what to install and configure within the VS Code editor 
+  // that runs in the browser.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        //format: publisher.extensionName
+        "ms-python.python", //Intelligent autocomplete (IntelliSense), 
+        // navigation to definitions, real-time error detection, and 
+        // the ability to select a Python interpreter and associate it with a notebook.
+        "ms-toolsai.jupyter", // It allows you to create cells, run them, view inline outputs, and
+        // select the kernel. It possible for a .ipynb file to open it and run it directly 
+        // in VS Code without needing to start a separate Jupyter server.
+        "ms-toolsai.jupyter-renderers", // To correctly render complex outputs
+        // within cells—pandas tables, matplotlib charts, HTML outputs. 
+        // Without this extension, DataFrames are displayed as plain text.
+        "charliermarsh.ruff", // Extremely fast Python linter and formatter written in Rust.
+        "ms-azuretools.vscode-containers" // Visualize containers and linter for Dockerfiles 
+      ],
+      "settings": {
+        // This line tells the Python extension which interpreter to use by default. 
+        // Without this line, VS Code would use the system's Python interpreter.
+        "python.defaultInterpreterPath": "/app/.venv/bin/python",
+        // Sets the working directory of the notebooks.
+        // In this case the root path of the repository
+        "jupyter.notebookFileRoot": "${workspaceFolder}"
+      }
+    }
+  },
+  // Add the activation of the virtual environment to the ~/.bashrc file
+  // that is the script that Bash runs automatically every time an interactive terminal is opened.
+  // From that moment on, every new terminal in Codespaces will start with (.venv) active 
+  // without needing to do anything manually.
+  "postCreateCommand": "echo 'source /app/.venv/bin/activate' >> ~/.bashrc"
+}
