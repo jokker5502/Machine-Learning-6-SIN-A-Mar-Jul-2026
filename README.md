@@ -1,4 +1,4 @@
-# Mid-Term Practical Evaluation — Machine Learning (6 SIN-A)
+# Mid-Term Practical Evaluation — Machine Learning (6 SIN-A) commit
 
 **Universidad Internacional del Ecuador — Computer Science School**
 **Duration:** 90 minutes · **Modality:** Individual · **Weight:** 12 points
