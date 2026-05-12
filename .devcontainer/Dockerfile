@@ -55,13 +55,12 @@ RUN uv venv .venv
 # COPY takes the requirements.txt file from the repository (the host machine) 
 # and copies it into the container in the current working directory 
 # (/app/requirements.txt)
-COPY requirements.txt .
-
+COPY pyproject.toml uv.lock ./
 # Installs all the packages listed in the requirements file into the `.venv` virtual environment.
 # the `--python .venv/bin/python` flag explicitly tells `uv` to install to
 # that specific interpreter and not the system Python. 
 # The `-r` flag means "read packages from this requirements file".
-RUN uv pip install --python .venv/bin/python -r requirements.txt
+RUN uv sync --frozen
 
 # Normally, to activate a virtual environment, 
 # you run `source .venv/bin/activate`
